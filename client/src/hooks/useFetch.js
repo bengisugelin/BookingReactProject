@@ -22,7 +22,7 @@ const useFetch = (url) =>{
         };
         fetchData();
 
-    },[url]);
+    },[]);
 
 
 

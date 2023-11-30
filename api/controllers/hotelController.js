@@ -74,6 +74,23 @@ export const getHotels = async (req, res, next) => {
     }
   };
 
+
+  export const getHotelsByCityAndPrice = async (req, res, next) => {
+    const { city, min, max, ...others } = req.query;
+  
+    try {
+      const hotels = await Hotel.find({
+        city,
+        ...others,
+        cheapestPrice: { $gt: min || 1, $lt: max || 999 },
+      }).limit(req.query.limit);
+  
+      res.status(200).json(hotels);
+    } catch (err) {
+      next(err);
+    }
+  };
+
 //GET count by city
 export const countByCity = async(req, res,next)=>{
     const cities = req.query.cities.split(",")  //get the city values, split each by ",", then put them into an array
