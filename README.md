@@ -2,4 +2,4 @@
 
 This repository is the deployed version of BookingAppProject. 
 
-To see BookingAppProject: [](https://github.com/bengisugelin/BookingAppProject)
+To see BookingAppProject please visit https://github.com/bengisugelin/BookingAppProject
